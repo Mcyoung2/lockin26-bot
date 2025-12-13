@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subscribe</title>
+</head>
+<body>
+  <h2>Lock-in 2.0 – Subscription</h2>
+  <input id="email" placeholder="Email (optional)" />
+  <br><br>
+  <button id="pay">Pay NGN 305,618</button>
+
+<script>
+document.getElementById('pay').onclick = async () => {
+  const email = document.getElementById('email').value;
+  const userId = 0; // we update this later
+
+  const res = await fetch('/create-charge', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ userId, amount: 305618, email })
+  });
+
+  const data = await res.json();
+
+  if (data.checkout_url) {
+    window.location.href = data.checkout_url;
+  } else {
+    alert('Error creating payment');
+  }
+};
+</script>
+</body>
+</html>
