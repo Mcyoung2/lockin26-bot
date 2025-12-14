@@ -43,7 +43,7 @@ app.post('/create-charge', async (req, res) => {
         metadata: { userId, email }
       },
       {
-        headers: { Authorization: Bearer ${process.env.KORA_SECRET_KEY} }
+        headers: { Authorization: 'Bearer ${process.env.KORA_SECRET_KEY}' }
       }
     );
 
@@ -88,7 +88,7 @@ app.post('/kora-webhook', async (req, res) => {
 
       await bot.telegram.sendMessage(
         userId,
-        Payment confirmed 🎉\nHere is your VIP access:\n${invite.invite_link}
+        Payment confirmed 🎉\nHere is your VIP access:'\n${invite.invite_link}'
       );
     }
 
