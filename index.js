@@ -39,7 +39,7 @@ app.post('/create-charge', async (req, res) => {
       {
         amount,
         currency: 'NGN',
-        description: Subscription for ${userId},
+        description: 'Subscription for ${userId}',
         metadata: { userId, email }
       },
       {
