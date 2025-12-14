@@ -43,7 +43,7 @@ app.post('/create-charge', async (req, res) => {
         metadata: { userId, email }
       },
       {
-        headers: { Authorization: 'Bearer ${process.env.KORA_SECRET_KEY}' }
+        headers: { Authorization: 'Bearer ${process.env.KORA_SECRET_KEY}'  }
       }
     );
 
