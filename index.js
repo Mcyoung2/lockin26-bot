@@ -88,7 +88,7 @@ app.post('/kora-webhook', async (req, res) => {
 
       await bot.telegram.sendMessage(
         userId,
-        Payment confirmed 🎉\nHere is your VIP access:'\n${invite.invite_link}'
+        'Payment confirmed 🎉\nHere is your VIP access:\n${invite.invite_link}'
       );
     }
 
