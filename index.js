@@ -16,12 +16,16 @@ bot.start(ctx => {
   ctx.reply('Welcome — tap Subscribe to open payment page.', {
     reply_markup: {
       inline_keyboard: [
-        [{ text: 'Subscribe', web_app: { url: ${process.env.WEBAPP_URL}/ } }]
+        [
+          {
+            text: 'Subscribe',
+            web_app: { url: process.env.WEBAPP_URL + '/' }
+          }
+        ]
       ]
     }
   });
 });
-
 // Launch bot
 bot.launch().then(() => console.log('Bot started'));
 
